@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <!-- Page styles -->
+    <link rel="stylesheet" href="/css/dashboard.css">
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="/bootstrap-icons/font/bootstrap-icons.css">
+</head>
+<body style="height: 100vh;">
+    
+    <div class="d-flex h-100">
+        <div class="col-md-2 col-lg-2 col-sm-2 h-100 bg-dark">
+            <div class="p-3">
+                <div class="header d-flex">
+                    <div class="rounded mx-2">
+                        <div class="profile-header"></div>
+                    </div>
+
+                    <!-- <div class="profile-details text-light mx-2">
+                        <p class="m-0 roboto-bold">Protoype Name</p>
+                        <span>admin-prototype@gmail.com</span>
+                    </div> -->
+
+                    <hr class="text-info">
+                </div>
+            </div>
+
+            <!-- Left tabs section -->
+            <div class="main-section my-4">
+                <h5 class="fs-14 ps-3 text-light">Main</h5>
+
+                <div class="leftTab d-flex align-items-center d-block my-1 py-2 w-100" id="dashboardTab" onclick="openTab(event, 'dashboard')">
+                    <span>
+                        <i class="bi bi-house fs-15 px-4"></i>
+                    </span>
+                    
+                    <h5 class="fs-14">Dashboard</h5>
+                </div>
+
+                <div class="leftTab d-flex align-items-center d-block my-1 py-2 w-100" onclick="openTab(event, 'catalog')">
+                    <span>
+                        <i class="bi bi-book fs-15 px-4"></i>
+                    </span>
+                    
+                    <h5 class="fs-14">School Catalog</h5>
+                </div>
+
+                <div class="leftTab top-100 d-flex align-items-center my-1 py-2 w-100">
+                    <span>
+                        <i class="bi bi-door-open fs-15 px-4"></i>
+                    </span>
+                    
+                    <h5 class="fs-14">Logout</h5>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!--R Navbar -->
+        <div class="col-md-10 col-lg-10 col-sm-10 bg-light">
+            <nav class="navbar navbar-expand-lg bg-white">
+                <div class="container justify-content-between px-4 py-2 align-items-center d-flex">
+                    <span>
+                        <i class="bi bi-list fs-4" style="cursor: pointer;"></i>
+                    </span>
+
+                    <!-- <div class="input-group">
+                        <input type="text" class="form-control">
+                        <span class="input-group-text"><i class="bi bi-search"></i></span>
+                    </div> -->
+
+                    <div class="d-flex">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a href="javascript:void(0)" role="button" class="nav-link">
+                                    <i class="bi-bell fs-5">
+                                        <!-- <button class="badge"></button> -->
+                                    </i>
+                                </a>
+                            </li>
+    
+                            <li class="nav-item">
+                                <a href="javascript:void(0)" class="nav-link">
+                                    <i class="bi-nut fs-5"></i>
+                                </a>
+                            </li>
+                        </ul>
+
+                        <div class="border-2 border-start border-opacity-100 mx-1">
+                            <div class="profile-details text-dark mx-3">
+                                <p class="m-0 roboto-bold fs-15">Protoype Name</p>
+                                <span class="fs-14">admin-prototype@gmail.com</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="content-page tabContent" id="dashboard" style="display: none;">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">
+                            <h5 class="py-3">Dashboard</h5>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-12 mb-3">
+                            <div class="row">
+                                <div class="d-flex">
+                                    <div class="card border-primary w-25 m-1">
+                                        <div class="card-body pt-4 px-4">
+                                            <div class="d-block">
+                                                <h5 class="mb-3 fs-14">Teachers</h5>
+                                                
+                                                <h2>59</h2>
+                                            </div>
+
+                                            <div class="pt-3">
+                                                <i class="bi-arrow-up"></i>
+                                                <span class="text-success">1.06%</span>
+                                               
+                                                <p class="text-opactity-50 mt-2 text-black-50">Since last month</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="card border-success w-25 m-1">
+                                        <div class="card-body pt-4 px-4">
+                                            <div class="d-block">
+                                                <h5 class="mb-3 fs-14">Students</h5>
+                                                
+                                                <h2>256</h2>
+                                            </div>
+
+                                            <p class="pt-3 pt-2">
+                                                <i class="bi-arrow-down"></i>
+                                                <span class="text-danger">1.06%</span>
+
+                                                <p class="text-opactity-50 mt-2 text-black-50">Since last month</p>
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div class="card border-danger w-25 m-1">
+                                        <div class="card-body pt-4 px-4">
+                                            <div class="d-block">
+                                                <h5 class="mb-3 fs-14">Revenue</h5>
+                                                
+                                                <h2>R 465K</h2>
+                                            </div>
+
+                                            <p class="pt-3 pt-2">
+                                                <i class="bi-arrow-up"></i>
+                                                <span class="text-success">5.56%</span>
+
+                                                <p class="text-opactity-50 mt-2 text-black-50">Since last month</p>
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div class="card border-info w-25 m-1">
+                                        <div class="card-body pt-4 px-4">
+                                            <div class="d-block">
+                                                <h5 class="mb-3 fs-14">Courses</h5>
+                                                
+                                                <h2>4</h2>
+                                            </div>
+
+                                            <p class="pt-3 pt-2">
+                                                <i class="bi-arrow-up"></i>
+                                                <span class="text-success">+1</span>
+
+                                                <p class="text-opactity-50 mt-2 text-black-50">Since last month</p>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="container-fluid mt-4">
+                            <div class="col-sm-7 col-md-7">
+                                <div class="card">
+                                    <div class="card-header d-flex justify-content-between m-1">
+                                        <h5>Recent Activity</h5>
+                                        <span><i role="button" class="bi-arrow-clockwise"></i></span>
+                                    </div>
+
+                                    <div class="card-body">
+                                        <div class="panel d-flex shadow rounded mb-1 justify-content-between align-items-center border p-2">
+                                            <div class="d-flex">
+                                                <span><i class="bi-bell-fill me-2"></i></span>
+                                                <p class="m-0">Left meeting</p>
+                                            </div>
+
+                                            <span class="text-opactity-50 text-black-50 fs-14">13:56</span>
+                                        </div>
+
+                                        <div class="panel d-flex shadow rounded my-1 justify-content-between align-items-center border p-2">
+                                            <div class="d-flex">
+                                                <span><i class="bi-info-circle me-2"></i></span>
+                                                <p class="m-0">Attended Programming 101 class</p>
+                                            </div>
+
+                                            <span class="text-opactity-50 text-black-50 fs-14">14:35</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6 col-md-6"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="content-page tabContent" id="catalog">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">
+                            <h5 class="py-3">School Catalog</h5>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-12 my-3">
+                            <div class="row">
+                                <div class="col-sm-4 col-md-4 col-lg-4">
+
+                                </div>
+
+                                <div class="col-sm-8 col-lg-8 col-md-8 bg-white rounded-2">
+                                    <div class="row">
+                                        <div class="d-flex align-items-center p-3 justify-content-between">
+                                            <h5>Task</h5>
+
+                                            <span>
+                                                <i class="bi-three-dots-vertical"></i>
+                                            </span>
+                                        </div>
+
+                                        <hr class="m-0">
+                                        <div class="text-center bg-light-lighter py-2">
+                                            <p class="m-0"><strong>4</strong> Tasks completed out of 6</p>
+                                        </div>
+                                        <hr class="opacity-25">
+                                        
+                                        <div class="card-body px-3">
+                                            <div class="table-responsive">
+                                                <table class="table table-centered table-hover table-nowrap">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>
+                                                                <h5 class="fs-15">App design and development</h5>
+                                                                <span class="fs-13 opacity-25">Due in 2 days</span>
+                                                            </td>
+
+                                                            <td>
+                                                                <h5 class="fs-15 opacity-50">Status</h5>
+                                                                <span class="fs-13 badge-warning text-danger ">In-complete</span>
+                                                            </td>
+
+                                                            <td>
+                                                                <h5 class="fs-15 opacity-50">Assigned to</h5>
+                                                                <span class="fs-13">Jermaine Cole</span>
+                                                            </td>
+
+                                                            <td>
+                                                                <h5 class="fs-15 opacity-50">Course Code</h5>
+                                                                <span class="fs-13">PROG101</span>
+                                                            </td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <td>
+                                                                <h5 class="fs-15"></h5>
+                                                                <span class="fs-13 opacity-25">Due in 2 days</span>
+                                                            </td>
+
+                                                            <td>
+                                                                <h5 class="fs-15 opacity-50">Status</h5>
+                                                                <span class="fs-13 badge-warning text-warning ">In-progress</span>
+                                                            </td>
+
+                                                            <td>
+                                                                <h5 class="fs-15 opacity-50">Assigned to</h5>
+                                                                <span class="fs-13">Aubrey Leslie</span>
+                                                            </td>
+
+                                                            <td>
+                                                                <h5 class="fs-15 opacity-50">Course Code</h5>
+                                                                <span class="fs-13">MATH205</span>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/dashboard.js"></script>
+</body>
+</html>

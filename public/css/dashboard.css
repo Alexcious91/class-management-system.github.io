@@ -1,0 +1,41 @@
+.bg-lighter {
+    /* background: #fbfbfd !important */
+    background: rgb(238, 238, 238);
+}
+
+.profile-header {
+    background: #7abde0 !important;
+    border-radius: 50%;
+    padding: 26px 14px;
+    width: 50px;
+}
+
+.noti-badge {
+    top: 28px;
+    padding: 4px;
+    display: inline-block;
+    background: blue;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.leftTab {
+    color: white;
+    transition: 0.75s ease;
+}
+
+.leftTab:hover {
+    background: #474747;
+    color: #7abde0;
+    cursor: pointer;
+}
+
+.leftTab.active {
+    background: #474747;
+    color: #7abde0;
+    cursor: pointer;
+}
+
+.content-page {
+    margin: 0 10px 0 10px;
+}
