@@ -11,36 +11,37 @@ const app = express();
 
 app.set('view engine', 'ejs');
 app.set('views', './views');
-app.use(session({ secret: 'admin101', resave: false, saveUninitialized: false }));
-app.use(passport.initialize());
-app.use(passport.session());
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true}));
 
+// Passport configuration
+app.use(session({
+    secret: 'admin105',
+    resave: false,
+    saveUninitialized: false
+}));
+
 // Import routes
 const classRouter = require('./routes/routes');
-
 app.use('/', classRouter);
 
 // In-memory database implement your own database structure
 const studentsList = [];
 
 app.post('/register', (req, res) => {
-    const emailRegex = '@';
-    const { name, email, password } = req.body;
+    const { email, password } = req.body;
 
-    if (!email.match(emailRegex)) {
-        res.render('/register.ejs', { message: 'Please enter the correct email.' })
-    } else {
-        studentsList.push({
-            name: name,
-            email: email,
-            password: password
-        });
-        console.log(studentsList);
-        res.redirect('/dashboard')
+    if (studentsList.some(student => student.email === email)) {
+        res.status(400).send('Student with that email already exists');
     }
 
+    const newStudent = {
+        id: `CMS - ${Math.floor(10 + Math.random() * 5000)}`,
+        email: email,
+        password: password
+    };
+
+    studentsList.push(newStudent);
 });
 
 const { courses } = require('./views/courses/courses');
